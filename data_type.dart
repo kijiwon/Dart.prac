@@ -62,3 +62,35 @@ var newFriends = [
   'e',
   for (var friend in oldFriends) "🩷 $friend",
 ];
+
+
+5. Maps
+key와 value를 연결하는 객체
+
+var player = {
+  'name': 'kiji',
+  'xp': 19.99,
+  'superpower': false,
+};
+
+player의 타입은 Map<String, Object> 
+=> key는 String, value는 Object타입
+Object는 타입스크립트의 any와 비슷함
+
++ 타입을 직접 명시하기
+Map<int, bool> player = {
+  1 : true,
+  2 : false,
+  3 : true,
+};
+
+key와 value 모두 모든 유형의 객체가 될 수 있음
+Map<List<int>, bool> player = {
+  [1, 2, 3, 4]: true,
+};
+
++ List 또한 요소로 객체를 가질 수 있음
+List<Map<String, Object>> players = [
+  {'name': 'kiji', 'xp': 19.99},
+  {'name': 'jiwon', 'xp': 19.99},
+];
