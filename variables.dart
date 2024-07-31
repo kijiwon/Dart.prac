@@ -5,7 +5,6 @@ var 키워드로 변수명을 선언한 후 값을 할당
 var name = 'kiji';
 
 
-
 2. 명시적 타입 지정
 명시적으로 변수의 타입을 지정
 
@@ -55,3 +54,42 @@ name?.length;
 
 => Null Safety는 Dart에서 안정성을 높이기 위한 강력한 기능으로
 변수가 null일 수 있는지 여부를 명시적으로 나타내어 안전한 코드 작성을 지원함
+
+
+5. final
+수정할 수 없는 변수를 만드는 키워드
+값은 단 한 번만 넣을 수 있음
+자바스크립트의 const와 비슷함
+  final -> 런타임에 값이 정해짐
+  const -> 컴파일 타임에 값이 정해짐
+  => 런타임에 값을 고정하고 싶은 경우에는 const를 사용
+
+final name = 'kiji';
+
+추가로 타입을 선언할 수 있음(필수는 아님🙅)
+final String name = 'kiji';
+
+
+6. late
+final 이나 var 앞에 붙여줄 수 있는 수식어
+초기 데이터 없이 먼저 변수를 생성하고 추후에 데이터를 넣을 때 주로 사용
+flutter로 data fetching을 할 때 유용함
+
+void main(){
+  late final String name;
+  // api 요청
+  print(name); // 오류! name에 접근할 수 없음
+}
+
+
+7. const
+dart에서는 compile-time constant를 만들어줌
+자바스크립트의 const는 dart의 final과 유사함!
+const는 컴파일 할 때 알고 있는 값에 사용
+만약, 어떤 값인지 모르고 그 값이 API로부터 오거나 사용자가 화면에서 입력해야 하는 값이라면 const가 아닌 final 또는 var를 사용해야 함
+=> const는 앱스토어에 올리기 전 이미 알고 있는 값을 다룰때 사용
+
+void main(){
+  const name = 'kiji'; // 컴파일 시점에 바뀌지 않는 값
+  final userName = fetchAPI(); // 컴파일 시점에 바뀌는 값
+}
