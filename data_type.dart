@@ -94,3 +94,21 @@ List<Map<String, Object>> players = [
   {'name': 'kiji', 'xp': 19.99},
   {'name': 'jiwon', 'xp': 19.99},
 ];
+
+
+6. Sets
+List와 형태가 비슷하지만 각 요소는 유니크한 값을 가짐
+-> 요소는 중복될 수 없음
+
+{}을 사용
+var numbers = {1, 2, 3, 4};
+
+또는 Set을 사용
+Set<int> numbers = {1, 2, 3, 4};
+
+각 요소는 유니크한 값을 가지기 때문에 동일한 요소를 여러번 추기해도 변함 없음
+Set<int> numbers = {1, 2, 3, 4};
+numbers.add(1);
+numbers.add(1);
+numbers.add(1);
+print(numbers); // {1, 2, 3, 4}
