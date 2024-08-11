@@ -2,7 +2,7 @@ Dart의 자료형
 
 Dart에서 자료형은 모두 객체
 String, int, double, bool -> class
-따라서 import할 필요 없이 해당 자료형이 가지는 모든 method를 사용할 수 있음
+따라서할 필요 없이 해당 자료형이 가지는 모든 method를 사용할 수 있음
 
 String name = 'kiji';
 bool alive = true;

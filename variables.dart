@@ -1,5 +1,5 @@
 1. var
-var 키워드로 변수명을 선언한 후 값을 할당
+var 값을 할당
 값을 업데이트할 때는 변수의 본래 타입과 일치해야함
 
 var name = 'kiji';
@@ -14,7 +14,7 @@ String name = 'kiji';
 var -> 관습적으로 함수나 메소드 내부에 지역변수를 선언할 때
 명시적 타입 지정 -> class에서 변수나 property를 선언할 때
 
-함수 안에서 지역변수를 선언하거나 메소드 안에서 지역변수를 선언하는 상황에서는 var를 사용하는 것을 권장
+함수 안에서 지역변수를 선언하거나 메소드 안에서 지역변수를 선언하는 상황에서는 var 권장
 
 
 3. dynamic (사용을 추천하지는 않음!)
@@ -71,7 +71,7 @@ final String name = 'kiji';
 
 
 6. late
-final 이나 var 앞에 붙여줄 수 있는 수식어
+final 이나 var 수식어
 초기 데이터 없이 먼저 변수를 생성하고 추후에 데이터를 넣을 때 주로 사용
 flutter로 data fetching을 할 때 유용함
 
@@ -86,7 +86,7 @@ void main(){
 dart에서는 compile-time constant를 만들어줌
 자바스크립트의 const는 dart의 final과 유사함!
 const는 컴파일 할 때 알고 있는 값에 사용
-만약, 어떤 값인지 모르고 그 값이 API로부터 오거나 사용자가 화면에서 입력해야 하는 값이라면 const가 아닌 final 또는 var를 사용해야 함
+만약, 어떤 값인지 모르고 그 값이 API로부터 오거나 사용자가 화면에서 입력해야 하는 값이라면 const가 아닌 final 또는 var 사용해야 함
 => const는 앱스토어에 올리기 전 이미 알고 있는 값을 다룰때 사용
 
 void main(){

@@ -47,9 +47,22 @@ String sayHello5({
   return "Hello $name, you are $age, and you come from $country";
 }
 
+// void main() {
+//   // print(sayHello4('kiji', 20, 'korea'));
+// // 파라미터의 수가 많아질수록 순서를 외우기 힘들고 직관적으로 알기 어려움
+// // => named parameters를 사용
+//   print(sayHello5(age: 20, country: 'korea', name: 'kiji'));
+// }
+
+// Optional Positional Parameters
+// 선택적으로 전달할 파라미터를 []로 묶어주고 -> optional 속성을 부여
+// 타입 뒤에 ?를 붙여줌 -> 해당 파라미터가 null이 올 수 있음을 알림
+String sayHello6(String name, int age, [String? country = 'cuba']) =>
+    "Hello $name, you are $age, and you come from $country";
+
+// sayHello6는 name, age는 필수로 받지만
+// country는 선택적 파라미터이고 기본값을 전달
 void main() {
-  // print(sayHello4('kiji', 20, 'korea'));
-// 파라미터의 수가 많아질수록 순서를 외우기 힘들고 직관적으로 알기 어려움
-// => named parameters를 사용
-  print(sayHello5(age: 20, country: 'korea', name: 'kiji'));
+  var result = sayHello6('kiji', 20);
+  print(result);
 }
