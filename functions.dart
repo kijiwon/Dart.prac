@@ -62,7 +62,26 @@ String sayHello6(String name, int age, [String? country = 'cuba']) =>
 
 // sayHello6는 name, age는 필수로 받지만
 // country는 선택적 파라미터이고 기본값을 전달
+// void main() {
+//   var result = sayHello6('kiji', 20);
+//   print(result);
+// }
+
+// QQ Operator
+// ?? 연산자
+// 왼쪽 값이 null인지 체크한 후
+//null이 아니면 왼쪽값을 리턴
+// null이면 오른쪽 값을 리턴
+
+String capitalizeName(String? name) =>
+    // 유저가 null을 입력하는 경우 체크
+    name?.toUpperCase() ?? 'ANON';
+// name이 null이라면 'ANON'을 리턴
+
+// ??= 연산자를 이용하면 변수 안에 값이 null일 때를 체크해 값을 할당할 수 있음
 void main() {
-  var result = sayHello6('kiji', 20);
-  print(result);
+  String? name;
+  // name이 null이라면 'kiji'를 할당
+  name ??= 'kiji';
+  print(name);
 }
