@@ -79,9 +79,34 @@ String capitalizeName(String? name) =>
 // name이 null이라면 'ANON'을 리턴
 
 // ??= 연산자를 이용하면 변수 안에 값이 null일 때를 체크해 값을 할당할 수 있음
-void main() {
-  String? name;
-  // name이 null이라면 'kiji'를 할당
-  name ??= 'kiji';
-  print(name);
+// void main() {
+//   String? name;
+//   // name이 null이라면 'kiji'를 할당
+//   name ??= 'kiji';
+//   print(name);
+// }
+
+// Typedef
+// 자료형 이름의 별명을 만들때 사용
+// 자료형에 사용자가 원하는 alias(별명)를 붙일 수 있게 해줌 -> 자료형을 간편하게 작성 가능
+
+typedef ListOfInts = List<int>; // 별명에 실제 자료형을 할당
+
+ListOfInts reverseListOfNumbers(List<int> list) {
+  var reversed = list.reversed;
+  // reversed된 list를 리턴
+  return reversed.toList();
 }
+
+// 사용자의 이름을 받으면 이름을 부르며 인사하는 함수
+typedef UserInfo = Map<String, String>;
+
+String sayHi(UserInfo userInfo) {
+  return 'Hi ${userInfo['name']}';
+}
+
+void main() {
+  sayHi({'name': 'kiji'});
+}
+
+// 구조화된 data의 형태를 지정하고 싶다면 class를 사용!
