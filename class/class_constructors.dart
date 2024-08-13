@@ -1,10 +1,20 @@
+// Abstract Classes
+// 추상화 클래스 <- 다른 클래스들이 직접 구현해야하는 메소드들을 모아놓은 조종의 청사진
+// 추상화 클래스에서는 기능을 구현하지 않음
+// 단, 특정 메소드를 구현하도록 강제함
+abstract class Human {
+  // 메소드의 시그니쳐가 무엇인지 정의 -> 메소드의 이름과 반환 타입
+  void walk();
+}
+
 // Enums
 // 개발 중 실수를 하지 않도록 도와주는 타입
 enum Team { red, blue }
 
 enum XPLevel { beginner, medium, pro }
 
-class Player {
+// Human class를 확장한 Player class
+class Player extends Human {
   // 변수 선언은 했지만 값은 나중에 받아오기
   // late final String name;
   // late int xp;
@@ -50,6 +60,10 @@ class Player {
         this.name = name,
         this.team = Team.blue,
         this.xp = XPLevel.beginner;
+
+  void walk() {
+    print('im walk');
+  }
 
   void sayHello() {
     print('Hi my name is $name');
