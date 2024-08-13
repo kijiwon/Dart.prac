@@ -1,12 +1,10 @@
-import '../data_type.dart';
-
 class Player {
   // 변수 선언은 했지만 값은 나중에 받아오기
   // late final String name;
   // late int xp;
 
 // 방법 2
-  final String name;
+  String name;
   int xp, age; // 동일한 타입의 변수는 묶어서 선언 가능
   String team;
 
@@ -80,4 +78,10 @@ void main() {
     'jiwon',
     21,
   );
+
+  // Cascade Notation
+  // ..을 사용해 변수(또는 class)를 가르킴
+  var kiji = Player(name: 'kiji', xp: 1200, team: 'red', age: 20)
+    ..name = 'jiwon'
+    ..age = 25; // .. -> kiji
 }
