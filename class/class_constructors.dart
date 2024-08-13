@@ -1,3 +1,9 @@
+// Enums
+// 개발 중 실수를 하지 않도록 도와주는 타입
+enum Team { red, blue }
+
+enum XPLevel { beginner, medium, pro }
+
 class Player {
   // 변수 선언은 했지만 값은 나중에 받아오기
   // late final String name;
@@ -5,8 +11,9 @@ class Player {
 
 // 방법 2
   String name;
-  int xp, age; // 동일한 타입의 변수는 묶어서 선언 가능
-  String team;
+  XPLevel xp;
+  int age;
+  Team team; // team 타입 변경
 
   // dart에서 생성자 함수는 클래스 이름과 같아야함
   // Player(String name, int xp) {
@@ -34,15 +41,15 @@ class Player {
     required int age,
   })  : this.age = age, // 전달된 인자로 할당
         this.name = name, // 전달된 인자로 할당
-        this.team = 'red', // 기본값
-        this.xp = 0; // 기본값
+        this.team = Team.red, // 기본값
+        this.xp = XPLevel.medium; // 기본값
 
   // 2. positional parameters
   Player.createBluePlayer(String name, int age)
       : this.age = age,
         this.name = name,
-        this.team = 'blue',
-        this.xp = 0;
+        this.team = Team.blue,
+        this.xp = XPLevel.beginner;
 
   void sayHello() {
     print('Hi my name is $name');
@@ -81,7 +88,7 @@ void main() {
 
   // Cascade Notation
   // ..을 사용해 변수(또는 class)를 가르킴
-  var kiji = Player(name: 'kiji', xp: 1200, team: 'red', age: 20)
+  var kiji = Player(name: 'kiji', xp: XPLevel.medium, team: Team.red, age: 20)
     ..name = 'jiwon'
     ..age = 25; // .. -> kiji
 }
